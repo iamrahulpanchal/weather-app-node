@@ -6,9 +6,7 @@ const getWeather = async () => {
 }
 
 getWeather().then((resp) => {
-    resp.forEach((item) => {
-        console.log(item.temp);
-    })
+    console.log(`Temperature is ${resp[0].temp}`);
 }).catch((err) => {
     console.log(err);
 });
