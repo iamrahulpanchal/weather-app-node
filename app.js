@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const getCoordinates = async () => {
-    const response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/Bhayandar.json?access_token=pk.eyJ1IjoiaWFtcmFodWxwYW5jaGFsIiwiYSI6ImNrZm01ajExNzI5aTAycW8zaHdzcDhsdW0ifQ.lC085wAf1ccyP7RvRfP8CQ`);
+    const response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/Bhayandar.json?access_token=pk.eyJ1IjoiaWFtcmFodWxwYW5jaGFsIiwiYSI6ImNrZm01ajExNzI5aTAycW8zaHdzcDhsdW0ifQ.lC085wAf1ccyP7RvRfP8CQ&limit=1`);
     return response.data.features[0].geometry.coordinates;
 }
 
