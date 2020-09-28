@@ -23,12 +23,12 @@ const getWeather = async (loc) => {
     }
 }
 
-getWeather('Bhayandar').then((resp) => {
-    const temp = resp.data[0].temp;
-    const forecast = resp.data[0].weather.description;
-    const location = resp.location;
+getWeather('Bhayandar').then(({data, location}) => {
+    const temp = data[0].temp;
+    const forecast = data[0].weather.description;
+    const loc = location;
     console.log(`Temperature : ${temp}`);
-    console.log(`Location : ${location}`);
+    console.log(`Location : ${loc}`);
     console.log(`Forecast : ${forecast}`);
 }).catch((err) => {
     console.log(`Unable to Fetch Weather Data. ${err}`);
