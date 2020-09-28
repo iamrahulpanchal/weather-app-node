@@ -16,5 +16,5 @@ const getWeather = async () => {
 getWeather().then((resp) => {
     console.log(`Temperature is ${resp[0].temp}`);
 }).catch((err) => {
-    console.log(err);
+    console.log(`Unable to Connect to Weather Service. ${err}`);
 });
