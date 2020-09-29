@@ -9,9 +9,9 @@ weatherForm.addEventListener('submit', (e) => {
     fetch(`http://localhost:3000/weather?address=${search}`).then((resp) => {
         resp.json().then((data) => {
             console.log(data);
-            // tempEl.value = data.temperature;
-            // forecastEl.value = data.forecast;
-            // locationEl.value = data.location;
+            tempEl.textContent = `Temperature : ${data.temperature}`;
+            forecastEl.textContent = `Forecast : ${data.forecast}`;
+            locationEl.textContent = `Location : ${data.location}`;
         }).catch((err) => {
             console.log(`Cant Fetch Data`);
         });
