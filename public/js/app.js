@@ -1,9 +1,11 @@
-const getData = async () => {
-    const response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/bhayandar.json?access_token=pk.eyJ1IjoiaWFtcmFodWxwYW5jaGFsIiwiYSI6ImNrZm01ajExNzI5aTAycW8zaHdzcDhsdW0ifQ.lC085wAf1ccyP7RvRfP8CQ&limit=1`);
-    console.log(response.data);
-}
+// const getData = async () => {
+//     const response = await axios.get(`http://localhost:3000/weather?address=bhy`);
+//     console.log(response.data);
+// }
 
-getData();
-
-console.log('Client Side');
+fetch(`http://localhost:3000/weather?address=bhy`).then((resp) => {
+    resp.json().then((data) => {
+        console.log(data);
+    })
+})
 
