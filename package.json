@@ -1,5 +1,5 @@
 {
-  "name": "weather-app-node",
+  "name": "web-server",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
   }
 }
