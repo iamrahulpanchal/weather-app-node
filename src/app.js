@@ -23,23 +23,23 @@ app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Weather App 1',
-        name: 'Rahul Panchal 2'
+        title: 'Weather App',
+        name: 'Rahul Panchal'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
-        name: 'Bhavin Panchal'
+        name: 'Rahul Panchal'
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        name: 'Rahul Panchal 3',
-        msg: 'If you need some help, contact me...' 
+        name: 'Rahul Panchal',
+        msg: 'If you need some help, Contact Me...' 
     });
 });
 
