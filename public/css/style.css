@@ -28,6 +28,7 @@ header{
 h1{
     font-size: 64px;
     margin-bottom: 16px;
+    color: #2b547e;
 }
 
 header a{
@@ -43,4 +44,14 @@ header a{
 
 #search_text{
     padding: 5px;
+}
+
+.search_btn{
+    padding: 5px;
+    background-color: #2b547e;
+    border-radius: 4px;
+    border: 1px solid #2b547e;
+    color: #fff;
+    width: 75px;
+    cursor: pointer;
 }
