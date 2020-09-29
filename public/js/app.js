@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit', (e) => {
     locationEl.textContent = '';
     const search = document.getElementById('search_text').value;
     if(search.length > 0){
-        fetch(`http://localhost:3000/weather?address=${search}`).then((resp) => {
+        fetch(`/weather?address=${search}`).then((resp) => {
             resp.json().then((data) => {
                 // console.log(data);
                 tempEl.textContent = `Temperature : ${data.temperature} Degrees`;
