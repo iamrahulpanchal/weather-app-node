@@ -40,3 +40,7 @@ header a{
     width: 250px;
     height: 250px;
 }
+
+#search_text{
+    padding: 5px;
+}
