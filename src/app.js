@@ -1,7 +1,9 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
-const { equal } = require('assert');
+const getWeather = require('./utils/weather');
+const { get } = require('http');
+// const getWeather = require('./utils/weather');
 
 const app = express();
 
@@ -44,14 +46,20 @@ app.get('/help', (req, res) => {
 app.get('/weather', (req, res) => {
     if(req.query.address === undefined || req.query.address === ''){
         return res.send({
-            error: 'You Must Provide Address'
+            error: 'You Must Provide Address in Parameter'
         });
     }
-    res.send({
-        forecast: 'Cloudy',
-        location: 'Mumbai',
-        address: req.query.address
-    });
+
+    getWeather(req.query.address).then((data) => {
+        res.send({
+            temperature: data.data[0].temp,
+            forecast: data.data[0].weather.description,
+            location: data.location,
+            address: req.query.address
+        })
+    }).catch((err) => {
+        console.log(err);
+    })
 });
 
 app.get('/help/*', (req, res) => {
